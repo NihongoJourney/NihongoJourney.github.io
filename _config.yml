@@ -107,8 +107,8 @@ defaults:
       author_profile: false
   # _philosophy
   - scope:
-      path: "_philosophy"
-      type: posts
+      path: ""
+      type: philosophy
     values:
       layout: single
       author_profile: false
@@ -125,8 +125,10 @@ tag_archive:
   path: /tags/
 
 collections:
-  philosophies:
+  philosophy:
     output: true
-    permalink: /philosophy/:path/
+    permalink: /:collection/:path/
     order:
       - always-be-moving.md
+      - input-before-output.md
+      - input/reading-first.md

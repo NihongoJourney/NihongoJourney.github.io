@@ -1,16 +1,20 @@
 ---
-title: "Overview"
-permalink: /philosophy/
+
+title: Philosophy
+layout: collection
 published: true
-layout: posts
+permalink: /philosophy/
+collection: philosophy
+entries_layout: grid
+classes: wide
 ---
 
 The following posts discuss the guiding principles behind the Nihongo Journey framework. Think of these as the mindset underlying the site.
 
-<ul>
+<!-- <ul>
 {% for philosophy in site.philosophies %}
   <li>
     <h3 class="post-title"><a href="{{ philosophy.link }}">{{ philosophy.title }}</a></h3>
   </li>
 {% endfor %}
-<ul>
+<ul> -->
