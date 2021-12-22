@@ -3,6 +3,7 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+**Why Nihongo Journey?**
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I created this site in Decemeber 2021 to create support and tools to make the journey from intermediate to advanced language fluency smooth. Despite the immense amount of support avaiable for learning languages at an introductory level, I've found it hard to find any decent path to get from a level of moderate proficiency to one where my enemies would cower in terror from my prescient language skills. After spending ***years*** (its been a full decade 🤫) experimenting what works and what doesn't work, I ran into a new issue: getting the material I needed in a convenient (read: free) way. What better way to do that than learn computer science, create a blog, 
+
