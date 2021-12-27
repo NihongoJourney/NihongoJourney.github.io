@@ -5,19 +5,19 @@
 title: Welcome to the Journey
 layout: single
 author_profile: true
-excerpt: "Support, tools, and more(?) for your trek from intermediate to advanced Japanese fluency"
+excerpt: "support, tools, and more(?) for your trek from intermediate to advanced Japanese fluency"
 header:
   overlay_image: assets/images/jan-gottweiss-dDh2ARsadRs-unsplash-cropped-compressed.jpg
   overlay_filter: 0.2 # same as adding an opacity of 0.2 to a black background
   caption: "Photo credit: [**Jan Gottweiss**](https://unsplash.com/photos/dDh2ARsadRs)"
 ---
 
-**<mark>This site is currently in development, but you are free to look around.</mark>**
+**<mark>This site is currently in development, but feel free to look around.</mark>**
 
-Hello there, I'm 両津 and welcome to my site/project/hobby/thing. I'm not sure how you found me, but I'm glad you're here. 
+Hello there, I'm 両津 and welcome to my site/project/thing. I'm not sure how you found me, but I'm glad you're here. 
 
-The goal of this site is to help you (yes, YOU!) transition to reading Japanese in the way you are reading this page (i.e. without looking every other word up). That means reading books, manga, newspapers, etc. created by Japanese native speakers for Japanese native speakers ***as if*** you were a native speaker as well. If that has been a goal of yours—as it has been for me—then you've come to the right place.
+The goal of this site is to help you (yes, you!) transition to reading Japanese in the way you are reading this page (i.e. without looking every other word up). That means reading books, manga, newspapers, etc. created by Japanese native speakers for Japanese native speakers ***as if*** you too were a native speaker. If native-level fluency in Japanese has been a goal of yours—as it has been for me—then you've come to the right place.
 
-The way that I'll help you reach your goal is rather simple: I'll get you reading native content right away. Sorry, but there's no way to get to reading native content without actually ***reading native content***. To help you retain the vocabulary you learn along the way I'll be providing you some custom spaced repetition software that integrates with the reading I'll be sending you.
+The way that I'll help you reach your goal is rather simple: I'll get you reading native content right away. Sorry, but there's no way to get to reading native content without actually ***reading native content***. It will be fun, I promise. To help you retain the vocabulary you learn along the way, I'll be providing you some custom [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition){:target="_blank"}{:rel="noopener noreferrer"} software. This *FREE* app will integrate the native content that I'll be sending you to make your progress transparent and efficient. All you have to do is complete the reading and reviews that are provided each day, and you'll be off to reading the content of your choosing in no time!
 
-When this site is completed, you'll be able to find out how to use the website (Philosophy) 
+To get started, click [here](_pages/philosophy.md) to find out the how and why behind this site. To determine if you are ready to use this site, click [here](_pages/about.md). To download the software and signup for the weekly content, click [here](_pages/resources.md). 
