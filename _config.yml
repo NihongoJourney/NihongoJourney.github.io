@@ -56,17 +56,17 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-# author:
-#   name   : "Nihonjo Journeyman"
-#   avatar : "/assets/images/bio-photo.jpg"
-#   bio    : "My awesome biography constrained to a sentence or two goes here."
-#   links:
+author:
+  name   : "両津"
+  avatar : "/assets/images/ryotsu-resized.jpg"
+  bio    : "Author of this website, including all content and tools. Send me a message on Twitter if you find a problem with the site. Thanks! "
+  links:
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
     #   url: "https://"
-    # - label: "Twitter"
-    #   icon: "fab fa-fw fa-twitter-square"
-    #   url: "https://twitter.com/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/NJourneyRyotsu"
     # - label: "GitHub"
     #   icon: "fab fa-fw fa-github"
     #   url: "https://github.com/"
@@ -76,9 +76,9 @@ plugins:
 
 footer:
   links:
-    # - label: "Twitter"
-    #   icon: "fab fa-fw fa-twitter-square"
-    #   url: "https://twitter.com/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/NJourneyRyotsu"
     # - label: "GitHub"
     #   icon: "fab fa-fw fa-github"
     #   url: "https://github.com/"
