@@ -1,5 +1,5 @@
 ---
-title: Input Before Output
+title: "Input Before Output"
 date: 2021-12-21
 updated at: 
 published: true
