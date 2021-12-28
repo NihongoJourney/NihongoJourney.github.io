@@ -9,6 +9,12 @@ published: true
 #   - 
 ---
 
+
+# Input >> Output
+Wrong Output, Wrong Habits. 
+
+All about feedback here, which is the hallmark of deliberate practice. 
+
 Garbage in equals garbage out. Why mylenate those pathways incorrectly?
 
 

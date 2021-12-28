@@ -9,10 +9,6 @@ published: true
 #   - 
 ---
 
-# Input >> Output
-Wrong Output, Wrong Habits. 
-
-All about feedback here, which is the hallmark of deliberate practice. 
 
 # Reading >> Listening. 
 Go for the media that is easiest to touch. If that's audio or vidoe, that's great. But for most of us its our phone. If you need headphones, its one more thing you have to remember. 

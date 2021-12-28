@@ -16,3 +16,5 @@ The power of compound interest. Leads to the critical mass.
 Bring in barriers to getting rich: getting started. 
 Compare the brilliance of Robinhood vs TD Ameritrade vs Old Brokerages. 
 - All reduce the barrier to entry. Getting started is key
+
+# The Mask Fits
