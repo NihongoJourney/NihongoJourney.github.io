@@ -3,11 +3,15 @@ permalink: /about/
 title: "About"
 ---
 
-**My Nihongo Journey?**
+**My Nihongo Journey**
 
-I created this site in Decemeber 2021 to create support and tools to help me on my journey from intermediate to advanced language fluency.  Despite the immense amount of support avaiable for learning Japanese at an introductory level, I've found it hard to find any decent path to get from a level of moderate proficiency to what I would considered native fluency. Honestly, is there anyone you know who has reached native fluency without living in Japan or without significant time or money they can dedicate on hobbies? 
+I created this site in Decemeber 2021 to create support and tools to help *me* on *my* journey from intermediate to advanced Japanese language fluency. Yes, it's true—I made this website to help myself. Selfish as that may seem, that's good news for you. I'm user number 1, and because I'll be using this tool every day, you can be sure that I will be dedicated to making sure the site is working well. 
 
-After spending ***years*** (its been a full decade 🤫) experimenting with what works and what doesn't work for me, I ran into a new issue: getting the material I needed in a convenient (read: free) way. What better way to do that than learn computer science, create a blog, and support an entire ecosystem of similar minded Japanese language enthusiasts? Ok, perhaps I do have a siginficant amount of time to dedicate on hobbies...
+On the other hand, you might be questioning why you should even keep reading. Who is this 両津, and why should I trust this chump who hasn't even verified that his method works? Well, you're going to have to trust me on that one 😬. 
+
+Getting back to the point of this section,\*ahem\*, perhaps you know my frustration? Despite the immense amount of support avaiable for learning Japanese at an introductory level, it's pretty darn hard to find any decent path to get from a level of moderate proficiency to native fluency. Honestly, is there anyone you know who has reached native fluency without living in Japan or without significant time or money they could dedicate to hobbies?
+
+After spending ***years*** (it's been a full decade 🤫) experimenting with different language learning programs, I hit upon a pretty effective [method](/learn/grammar) for improving language skills that works for the resources-constrained learner. I ran into a new issue: getting the material I needed in a convenient (read: free) way. What better way to do that than learn computer science, create a blog, and support an entire ecosystem of similar minded Japanese language enthusiasts? Ok, perhaps I do have a siginficant amount of time to dedicate on hobbies...
 
 **Who is this site for?**
 
