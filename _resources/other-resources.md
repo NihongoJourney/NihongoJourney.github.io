@@ -11,6 +11,6 @@ published: true
 Please note that this list will change. I will only recommend resources based on personal experience.
 
 # Listening Only
-Podcasts:
+Podcasts: japanesepod101.com
 
 
