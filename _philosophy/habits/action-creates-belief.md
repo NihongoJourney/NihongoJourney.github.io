@@ -37,3 +37,9 @@ Worried about the investment of time? Even if you don't use my method, it may he
 
 Not about the goal, but the journey. Like working out or eating well, requires maintenance. If goal was to only look fit, didn't enjoy the journey, then you would stop both of these as well. 
 
+# Setting Expectations
+
+http://www.alljapaneseallthetime.com/blog/unrealistic-expectations-that-you-need-to-stop-having/
+"most people drastically overestimate what they can get done in 2 days and drastically underestimate what they can get done in 2 years."
+
+If you think you are going to become fluent overnight, then you're in the wrong place. You need to reframe what your goal is: not to consume all the Japanses content that exists, but the one in your inbox this mornign, that you find interesting. 
