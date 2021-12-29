@@ -1,5 +1,5 @@
 ---
-title: Spillover and Critical Mass
+title:  Critical Mass and Lethal Radiation
 date: 2021-12-21
 updated at: 
 published: true

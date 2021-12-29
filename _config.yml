@@ -130,5 +130,5 @@ collections:
     permalink: /:collection/:path/
     order:
       - always-be-moving.md
-      - input-before-output.md
+      - input/input-before-output.md
       - input/reading-first.md

@@ -28,7 +28,7 @@ But don't let that stop you. You can become "fluent" in reading books, and befor
 
 Perhaps the most controversial aspect of the AJATT method is that it requires you to be immersed in a Japanese environment all the time. In fact, it's the most essential element, and the source of the acronym "AJATT." But is a prolonged 18-month period of near total immersion in a Japanese media bubble ***really*** necessary?
 
-The answer is no. That's the good news. The bad news is that without the language immersion evironment, you'll have a longer journey to [General Japanese Fluency]() But as I've stated on this blog, rushing towards GJF 
+The answer is no. That's the good news. The bad news is that without the language immersion evironment, you'll have a longer journey to [General Japanese Fluency] But as I've stated on this blog, rushing towards GJF 
 
 
 

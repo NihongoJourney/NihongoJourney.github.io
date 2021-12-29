@@ -2,7 +2,7 @@
 title: Atomize Your Tasks
 date: 2021-12-21
 updated at: 
-published: false
+published: true
 # categories:
 #   - 
 # tags:
