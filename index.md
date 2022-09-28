@@ -7,14 +7,14 @@ layout: single
 author_profile: true
 excerpt: "support, tools, and more(?) for your trek from intermediate to advanced Japanese fluency"
 header:
-  overlay_image: assets/images/jan-gottweiss-dDh2ARsadRs-unsplash-cropped-compressed.jpg
-  overlay_filter: 0.2 # same as adding an opacity of 0.2 to a black background
-  caption: "Photo credit: [**Jan Gottweiss**](https://unsplash.com/photos/dDh2ARsadRs)"
+  # overlay_image: assets/images/jan-gottweiss-dDh2ARsadRs-unsplash-cropped-compressed.jpg
+  # overlay_filter: 0.2 # same as adding an opacity of 0.2 to a black background
+  # caption: "Photo credit: [**Jan Gottweiss**](https://unsplash.com/photos/dDh2ARsadRs)"
 ---
 
 **<mark>This site is currently in development, but feel free to look around.</mark>**
 
-Hello there, I'm 両津 and welcome to my site/project/thing. I'm not sure how you found me, but I'm glad you're here. 
+Hello there, I'm 両津 and welcome to my site/project/rant. I'm not sure how you found me, but I'm glad you're here. 
 
 The goal of this site is to help you (yes, you!) transition to reading Japanese in the way you are reading this page (i.e. without looking every other word up). That means reading books, manga, newspapers, etc. created by Japanese native speakers for Japanese native speakers as if *you too* were a native speaker. If native-level fluency in Japanese has been a goal of yours—as it has been for me—then you've come to the right place.
 
