@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Ashiba 足場</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #111111;
+            background: #ffffff;
+        }
+
+        :root {
+            --primary-color: #0092ca;
+            --primary-hover: #14a6de;
+            --text-dark: #111111;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo-jp {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-left: 8px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* HAMBURGER MENU */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 99;
+            padding: 80px 30px 30px;
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 98;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-links a {
+            display: block;
+            padding: 15px 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            transition: color 0.2s;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, #f0f8fc 0%, #ffffff 100%);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .pricing-header p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* TOGGLE SWITCH */
+        .billing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .billing-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .billing-label.inactive {
+            color: var(--text-light);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 32px;
+            background: #ddd;
+            border-radius: 32px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary-color);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(28px);
+        }
+
+        .save-badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* PRICING CARD */
+        .pricing-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 146, 202, 0.15);
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 146, 202, 0.25);
+        }
+
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .price-container {
+            margin-bottom: 32px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 32px;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            color: var(--text-dark);
+            font-size: 16px;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .pricing-header h1 {
+                font-size: 36px;
+            }
+
+            .pricing-card {
+                padding: 32px 24px;
+            }
+
+            .price {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Ashiba<span class="logo-jp">足場</span></a>
+            <div class="nav-right">
+                <a href="#" class="nav-cta">Get Started — For Free!</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="/learning">Learning</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+        </ul>
+    </aside>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h1>Simple, Transparent Pricing</h1>
+                <p>Start reading manga in Japanese today with full access to all features</p>
+                
+                <!-- BILLING TOGGLE -->
+                <div class="billing-toggle">
+                    <span class="billing-label" id="monthlyLabel">Monthly</span>
+                    <div class="toggle-switch" id="toggleSwitch">
+                        <div class="toggle-slider"></div>
+                    </div>
+                    <span class="billing-label inactive" id="yearlyLabel">Yearly</span>
+                    <span class="save-badge">Save 45%</span>
+                </div>
+            </div>
+
+            <!-- PRICING CARD -->
+            <div class="pricing-card-wrapper">
+                <div class="pricing-card">
+                    <div class="plan-name">Individual Plan</div>
+                    
+                    <div class="price-container">
+                        <div>
+                            <span class="price" id="priceAmount">$14.99</span>
+                            <span class="price-period" id="pricePeriod">/month</span>
+                        </div>
+                        <div class="price-note" id="priceNote">Billed monthly</div>
+                    </div>
+
+                    <a href="#" class="cta-button">Start Reading Manga Now</a>
+
+                    <ul class="features-list">
+                        <li>Unlimited manga flashcards</li>
+                        <li>Smart spaced repetition system</li>
+                        <li>Real manga panel flashcards</li>
+                        <li>Progress tracking & analytics</li>
+                        <li>Study on all devices</li>
+                        <li>Access to all manga series</li>
+                        <li>Context-based vocabulary learning</li>
+                        <li>Comprehensive study guides</li>
+                        <li>7-day free trial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ashiba 足場. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Sidebar functionality
+        const hamburger = document.getElementById('hamburgerBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleSidebar() {
+            hamburger.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        hamburger.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                toggleSidebar();
+            }
+        });
+
+        // Pricing toggle functionality
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const monthlyLabel = document.getElementById('monthlyLabel');
+        const yearlyLabel = document.getElementById('yearlyLabel');
+        const priceAmount = document.getElementById('priceAmount');
+        const pricePeriod = document.getElementById('pricePeriod');
+        const priceNote = document.getElementById('priceNote');
+
+        let isYearly = false;
+
+        toggleSwitch.addEventListener('click', () => {
+            isYearly = !isYearly;
+            toggleSwitch.classList.toggle('active');
+            
+            if (isYearly) {
+                // Switch to yearly
+                monthlyLabel.classList.add('inactive');
+                yearlyLabel.classList.remove('inactive');
+                priceAmount.textContent = '$99';
+                pricePeriod.textContent = '/year';
+                priceNote.textContent = 'Billed annually ($8.25/month)';
+            } else {
+                // Switch to monthly
+                monthlyLabel.classList.remove('inactive');
+                yearlyLabel.classList.add('inactive');
+                priceAmount.textContent = '$14.99';
+                pricePeriod.textContent = '/month';
+                priceNote.textContent = 'Billed monthly';
