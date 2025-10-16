@@ -1,23 +1,1623 @@
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-title: Welcome to the Journey
-layout: single
-author_profile: true
-excerpt: "support, tools, and more(?) for your trek from intermediate to advanced Japanese fluency"
-header:
-  # overlay_image: assets/images/jan-gottweiss-dDh2ARsadRs-unsplash-cropped-compressed.jpg
-  # overlay_filter: 0.2 # same as adding an opacity of 0.2 to a black background
-  # caption: "Photo credit: [**Jan Gottweiss**](https://unsplash.com/photos/dDh2ARsadRs)"
----
+<!DOCTYPE html>
 
-**<mark>This site is currently in development, but feel free to look around.</mark>**
+<html lang="en">
 
-Hello there, I'm 両津 and welcome to my site/project/rant. I'm not sure how you found me, but I'm glad you're here. 
+<head>
 
-The goal of this site is to help you (yes, you!) transition to reading Japanese in the way you are reading this page (i.e. without looking every other word up). That means reading books, manga, newspapers, etc. created by Japanese native speakers for Japanese native speakers as if *you too* were a native speaker. If native-level fluency in Japanese has been a goal of yours—as it has been for me—then you've come to the right place.
+    <meta charset="UTF-8">
 
-The way that I'll help you reach your goal is rather simple: I'll get you reading native content right away. Simply put, there's no way to get to reading native content without actually ***reading native content***. It will be fun, I promise. To help you retain the vocabulary you learn along the way, I'll be providing you some custom [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition){:target="_blank"}{:rel="noopener noreferrer"} software. This ~*FREE*~ app will integrate the native content that I'll be sending you to make your progress transparent and efficient. All you have to do is complete the reading and reviews that are provided each day, and you'll be off to reading the content of your choosing in no time! 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-To get started, click [here](_pages/about.md) to find out the what and why behind this site. To learn more about how to use this site, click [here](_pages/philosophy.md). To signup for the SRS app and weekly content, click [here](_pages/resources.md).
+    <title>Ashiba 足場 - Learn Japanese Through Manga Flashcards</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            line-height: 1.6;
+
+            color: #111111;
+
+            background: #ffffff;
+
+        }
+
+
+
+        /* EDIT COLORS HERE - Matches Ashiba Brand */
+
+        :root {
+
+            --primary-color: #0092ca;
+
+            --primary-hover: #14a6de;
+
+            --text-dark: #111111;
+
+            --text-light: #666;
+
+            --bg-light: #f8f9fa;
+
+        }
+
+
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+
+
+        /* NAVIGATION */
+
+        nav {
+
+            padding: 20px 0;
+
+            position: sticky;
+
+            top: 0;
+
+            background: rgba(255, 255, 255, 0.98);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 100;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+
+        nav .container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+
+        .logo {
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            color: var(--text-dark);
+
+            text-decoration: none;
+
+        }
+
+
+
+        .logo-jp {
+
+            font-size: 20px;
+
+            color: var(--text-light);
+
+            margin-left: 8px;
+
+        }
+
+
+
+        .nav-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+
+        .nav-cta {
+
+            background: var(--primary-color);
+
+            color: white;
+
+            padding: 12px 28px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: background 0.2s, transform 0.2s;
+
+        }
+
+
+
+        .nav-cta:hover {
+
+            background: var(--primary-hover);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* HAMBURGER MENU */
+
+        .hamburger {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            cursor: pointer;
+
+            padding: 8px;
+
+            background: none;
+
+            border: none;
+
+            z-index: 101;
+
+        }
+
+
+
+        .hamburger span {
+
+            width: 25px;
+
+            height: 3px;
+
+            background: var(--text-dark);
+
+            transition: all 0.3s;
+
+            border-radius: 2px;
+
+        }
+
+
+
+        .hamburger.active span:nth-child(1) {
+
+            transform: rotate(45deg) translate(8px, 8px);
+
+        }
+
+
+
+        .hamburger.active span:nth-child(2) {
+
+            opacity: 0;
+
+        }
+
+
+
+        .hamburger.active span:nth-child(3) {
+
+            transform: rotate(-45deg) translate(7px, -7px);
+
+        }
+
+
+
+        /* SIDEBAR */
+
+        .sidebar {
+
+            position: fixed;
+
+            top: 0;
+
+            right: -300px;
+
+            width: 300px;
+
+            height: 100vh;
+
+            background: white;
+
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+
+            transition: right 0.3s ease;
+
+            z-index: 99;
+
+            padding: 80px 30px 30px;
+
+        }
+
+
+
+        .sidebar.active {
+
+            right: 0;
+
+        }
+
+
+
+        .sidebar-overlay {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100vh;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: opacity 0.3s, visibility 0.3s;
+
+            z-index: 98;
+
+        }
+
+
+
+        .sidebar-overlay.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+
+        .sidebar-links {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .sidebar-links li {
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .sidebar-links a {
+
+            display: block;
+
+            padding: 15px 0;
+
+            color: var(--text-dark);
+
+            text-decoration: none;
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            transition: color 0.2s;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+
+        .sidebar-links a:hover {
+
+            color: var(--primary-color);
+
+        }
+
+
+
+        /* HERO SECTION - EDIT MAIN COPY HERE */
+
+        .hero {
+
+            padding: 80px 0 100px;
+
+            background: linear-gradient(135deg, #f0f8fc 0%, #ffffff 100%);
+
+            text-align: center;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 56px;
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            margin-bottom: 24px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .hero .highlight {
+
+            color: var(--primary-color);
+
+        }
+
+
+
+        .hero .subheading {
+
+            font-size: 24px;
+
+            color: var(--text-light);
+
+            margin-bottom: 40px;
+
+            max-width: 700px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        .cta-buttons {
+
+            display: flex;
+
+            gap: 16px;
+
+            justify-content: center;
+
+            margin-bottom: 50px;
+
+        }
+
+
+
+        .btn-primary {
+
+            background: var(--primary-color);
+
+            color: white;
+
+            padding: 18px 40px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            font-size: 18px;
+
+            transition: background 0.2s, transform 0.2s;
+
+            display: inline-block;
+
+            border: 2px solid var(--primary-color);
+
+        }
+
+
+
+        .btn-primary:hover {
+
+            background: var(--primary-hover);
+
+            border-color: var(--primary-hover);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .btn-secondary {
+
+            background: white;
+
+            color: var(--primary-color);
+
+            padding: 18px 40px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            font-size: 18px;
+
+            border: 2px solid var(--primary-color);
+
+            transition: background 0.2s, transform 0.2s;
+
+            display: inline-block;
+
+        }
+
+
+
+        .btn-secondary:hover {
+
+            background: var(--primary-color);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .social-proof-mini {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            color: var(--text-light);
+
+            font-size: 14px;
+
+        }
+
+
+
+        .avatar-stack {
+
+            display: flex;
+
+            margin-right: 8px;
+
+        }
+
+
+
+        .avatar {
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            border: 2px solid white;
+
+            margin-left: -8px;
+
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+
+        }
+
+
+
+        .avatar:first-child {
+
+            margin-left: 0;
+
+        }
+
+
+
+        /* FEATURES SECTION - EDIT FEATURES HERE */
+
+        .features {
+
+            padding: 100px 0;
+
+            background: white;
+
+        }
+
+
+
+        .section-header {
+
+            text-align: center;
+
+            margin-bottom: 60px;
+
+        }
+
+
+
+        .section-header h2 {
+
+            font-size: 42px;
+
+            font-weight: 700;
+
+            margin-bottom: 16px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .section-header p {
+
+            font-size: 20px;
+
+            color: var(--text-light);
+
+            max-width: 600px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 40px;
+
+            margin-top: 60px;
+
+        }
+
+
+
+        .feature-card {
+
+            padding: 40px;
+
+            border-radius: 8px;
+
+            background: var(--bg-light);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            border: 1px solid #e0e0e0;
+
+        }
+
+
+
+        .feature-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 30px rgba(0, 146, 202, 0.1);
+
+        }
+
+
+
+        .feature-icon {
+
+            width: 60px;
+
+            height: 60px;
+
+            background: var(--primary-color);
+
+            border-radius: 8px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .feature-card h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .feature-card p {
+
+            color: var(--text-light);
+
+            line-height: 1.7;
+
+        }
+
+
+
+        /* HOW IT WORKS */
+
+        .how-it-works {
+
+            padding: 100px 0;
+
+            background: var(--bg-light);
+
+        }
+
+
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 40px;
+
+            margin-top: 60px;
+
+        }
+
+
+
+        .step {
+
+            text-align: center;
+
+        }
+
+
+
+        .step-number {
+
+            width: 60px;
+
+            height: 60px;
+
+            background: var(--primary-color);
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            margin: 0 auto 20px;
+
+        }
+
+
+
+        .step h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .step p {
+
+            color: var(--text-light);
+
+        }
+
+
+
+        /* TESTIMONIALS - EDIT TESTIMONIALS HERE */
+
+        .testimonials {
+
+            padding: 100px 0;
+
+            background: white;
+
+        }
+
+
+
+        .testimonial-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+            margin-top: 60px;
+
+        }
+
+
+
+        .testimonial-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            border: 1px solid #e0e0e0;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+
+
+
+        .testimonial-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 8px 24px rgba(0, 146, 202, 0.1);
+
+        }
+
+
+
+        .testimonial-content {
+
+            font-size: 16px;
+
+            color: var(--text-dark);
+
+            margin-bottom: 20px;
+
+            line-height: 1.7;
+
+            font-style: italic;
+
+        }
+
+
+
+        .testimonial-author {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+
+        .testimonial-avatar {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+
+        }
+
+
+
+        .testimonial-info h4 {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .testimonial-info p {
+
+            font-size: 14px;
+
+            color: var(--text-light);
+
+        }
+
+
+
+        /* STATS SECTION */
+
+        .stats {
+
+            padding: 80px 0;
+
+            background: var(--primary-color);
+
+            color: white;
+
+        }
+
+
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 40px;
+
+            text-align: center;
+
+        }
+
+
+
+        .stat h3 {
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        .stat p {
+
+            font-size: 18px;
+
+            opacity: 0.9;
+
+        }
+
+
+
+        /* CTA SECTION */
+
+        .final-cta {
+
+            padding: 100px 0;
+
+            background: var(--bg-light);
+
+            text-align: center;
+
+        }
+
+
+
+        .final-cta h2 {
+
+            font-size: 42px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+            color: var(--text-dark);
+
+        }
+
+
+
+        .final-cta p {
+
+            font-size: 20px;
+
+            color: var(--text-light);
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        /* FOOTER */
+
+        footer {
+
+            padding: 40px 0;
+
+            background: var(--text-dark);
+
+            color: white;
+
+            text-align: center;
+
+        }
+
+
+
+        footer p {
+
+            opacity: 0.7;
+
+        }
+
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+
+                font-size: 36px;
+
+            }
+
+
+
+            .hero .subheading {
+
+                font-size: 18px;
+
+            }
+
+
+
+            .cta-buttons {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+
+
+            .btn-primary, .btn-secondary {
+
+                width: 100%;
+
+                max-width: 300px;
+
+            }
+
+
+
+            .section-header h2 {
+
+                font-size: 32px;
+
+            }
+
+
+
+            .logo {
+
+                font-size: 24px;
+
+            }
+
+
+
+            .logo-jp {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="container">
+
+            <a href="#" class="logo">Ashiba<span class="logo-jp">足場</span></a>
+
+            <div class="nav-right">
+
+                <a href="#" class="nav-cta">Get Started — For Free!</a>
+
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- SIDEBAR OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <ul class="sidebar-links">
+
+            <li><a href="/learning">Learning</a></li>
+
+            <li><a href="/blog">Blog</a></li>
+
+            <li><a href="/pricing">Pricing</a></li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <!-- EDIT MAIN HEADLINE HERE -->
+
+            <h1>Master Japanese with <span class="highlight">Manga Flashcards</span></h1>
+
+            
+
+            <!-- EDIT SUBHEADING HERE -->
+
+            <p class="subheading">Learn to read your favorite manga in Japanese using intelligent flashcards. Turn every panel into a powerful learning opportunity.</p>
+
+            
+
+            <!-- CALL TO ACTION BUTTONS -->
+
+            <div class="cta-buttons">
+
+                <a href="#" class="btn-primary">Try Free for 7 Days</a>
+
+                <a href="#" class="btn-secondary">See How It Works</a>
+
+            </div>
+
+
+
+            <!-- SOCIAL PROOF MINI -->
+
+            <div class="social-proof-mini">
+
+                <div class="avatar-stack">
+
+                    <div class="avatar"></div>
+
+                    <div class="avatar"></div>
+
+                    <div class="avatar"></div>
+
+                    <div class="avatar"></div>
+
+                </div>
+
+                <span><strong>3,500+ learners</strong> reading manga in Japanese</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FEATURES SECTION -->
+
+    <section class="features">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Everything You Need to Start Reading Manga</h2>
+
+                <p>Learn naturally through real manga panels and smart spaced repetition</p>
+
+            </div>
+
+
+
+            <!-- EDIT FEATURES HERE -->
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">📚</div>
+
+                    <h3>Real Manga Panels</h3>
+
+                    <p>Every flashcard features actual manga panels with full context. See exactly how words and grammar are used in authentic Japanese stories.</p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🎯</div>
+
+                    <h3>Smart Spaced Repetition</h3>
+
+                    <p>Our SRS algorithm shows you cards at the perfect time for maximum retention. Review less, remember more.</p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">💡</div>
+
+                    <h3>Context-Based Learning</h3>
+
+                    <p>Stop memorizing isolated words. Learn vocabulary and kanji in the context of real stories you actually want to read.</p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">📱</div>
+
+                    <h3>Study Anywhere</h3>
+
+                    <p>Practice on any device with seamless sync. Your progress follows you whether you're on phone, tablet, or desktop.</p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">📊</div>
+
+                    <h3>Track Your Growth</h3>
+
+                    <p>Visual progress tracking shows your vocabulary expansion and reading level improvements day by day.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-it-works">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Start Reading Manga in 3 Simple Steps</h2>
+
+                <p>From complete beginner to confident reader</p>
+
+            </div>
+
+
+
+            <!-- EDIT STEPS HERE -->
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">1</div>
+
+                    <h3>Choose Your Manga</h3>
+
+                    <p>Pick from popular series or upload your own. Create custom flashcard decks from manga you love.</p>
+
+                </div>
+
+
+
+                <div class="step">
+
+                    <div class="step-number">2</div>
+
+                    <h3>Review Daily</h3>
+
+                    <p>Study manga panel flashcards for just 15-20 minutes a day. See words in context and build vocabulary naturally.</p>
+
+                </div>
+
+
+
+                <div class="step">
+
+                    <div class="step-number">3</div>
+
+                    <h3>Read Fluently</h3>
+
+                    <p>Watch your reading speed accelerate as vocabulary becomes automatic. Enjoy manga without constant dictionary lookups.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+
+                    <h3>3,500+</h3>
+
+                    <p>Active Learners</p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>1.2M+</h3>
+
+                    <p>Flashcards Created</p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>400+</h3>
+
+                    <p>Manga Series</p>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>15 min</h3>
+
+                    <p>Average Daily Study</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Learners Love Ashiba</h2>
+
+                <p>Real stories from manga readers just like you</p>
+
+            </div>
+
+
+
+            <!-- EDIT TESTIMONIALS HERE -->
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        "I went from struggling with basic hiragana to reading One Piece in 6 months. Learning with actual manga panels instead of boring textbook examples made all the difference."
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar"></div>
+
+                        <div class="testimonial-info">
+
+                            <h4>Sarah Chen</h4>
+
+                            <p>College Student, USA</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        "The context from real manga helped me understand nuances that textbooks never taught. I'm finally reading manga without stopping every panel to look things up."
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar"></div>
+
+                        <div class="testimonial-info">
+
+                            <h4>Marcus Johnson</h4>
+
+                            <p>Software Developer, UK</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        "I tried Duolingo, Rosetta Stone, expensive tutors. Nothing worked like learning through manga I actually wanted to read. Game changer for my Japanese journey."
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar"></div>
+
+                        <div class="testimonial-info">
+
+                            <h4>Alex Rivera</h4>
+
+                            <p>Graphic Designer, Spain</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        "The progress tracking keeps me motivated daily. Watching my vocabulary grow week by week is incredibly satisfying. I'm reading series I never dreamed I could."
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar"></div>
+
+                        <div class="testimonial-info">
+
+                            <h4>Emma Schmidt</h4>
+
+                            <p>Medical Student, Germany</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <div class="testimonial-content">
+
+                        "Finally, a language app that doesn't feel like homework. I actually look forward to my daily reviews because I'm reading stories I love instead of random sentences."
+
+                    </div>
+
+                    <div class="testimonial-author">
+
+                        <div class="testimonial-avatar"></div>
+
+                        <div class="testimonial-info">
+
+                            <h4>David Park</h4>
+
+                            <p>Animator, South Korea</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+        <div class="container">
+
+            <h2>Start Reading Manga in Japanese Today</h2>
+
+            <p>Join thousands of learners mastering Japanese through manga they love</p>
+
+            <div class="cta-buttons">
+
+                <a href="#" class="btn-primary">Try Free for 7 Days</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>&copy; 2025 Ashiba 足場. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT FOR SIDEBAR -->
+
+    <script>
+
+        const hamburger = document.getElementById('hamburgerBtn');
+
+        const sidebar = document.getElementById('sidebar');
+
+        const overlay = document.getElementById('sidebarOverlay');
+
+
+
+        function toggleSidebar() {
+
+            hamburger.classList.toggle('active');
+
+            sidebar.classList.toggle('active');
+
+            overlay.classList.toggle('active');
+
+        }
+
+
+
+        hamburger.addEventListener('click', toggleSidebar);
+
+        overlay.addEventListener('click', toggleSidebar);
+
+
+
+        // Close sidebar with Escape key
+
+        document.addEventListener('keydown', (e) => {
+
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+
+                toggleSidebar();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
