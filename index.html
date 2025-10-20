@@ -55,18 +55,32 @@
             font-weight: 700;
             color: var(--text-dark);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .logo-jp {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-left: 8px;
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .rounded-image {
+            border-radius: 15%;
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
         }
 
         .nav-cta {
@@ -84,98 +98,7 @@
             transform: translateY(-2px);
         }
 
-        /* HAMBURGER MENU */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-            background: none;
-            border: none;
-            z-index: 101;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-dark);
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -300px;
-            width: 300px;
-            height: 100vh;
-            background: white;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-            transition: right 0.3s ease;
-            z-index: 99;
-            padding: 80px 30px 30px;
-        }
-
-        .sidebar.active {
-            right: 0;
-        }
-
-        .sidebar-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            z-index: 98;
-        }
-
-        .sidebar-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .sidebar-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 20px;
-        }
-
-        .sidebar-links a {
-            display: block;
-            padding: 15px 0;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 600;
-            transition: color 0.2s;
-            border-bottom: 1px solid #eee;
-        }
-
-        .sidebar-links a:hover {
-            color: var(--primary-color);
-        }
+        /* NAV LINKS */
 
         /* HERO SECTION - EDIT MAIN COPY HERE */
         .hero {
@@ -257,6 +180,7 @@
             gap: 12px;
             color: var(--text-light);
             font-size: 14px;
+            margin-bottom: 50px;
         }
 
         .avatar-stack {
@@ -275,6 +199,23 @@
 
         .avatar:first-child {
             margin-left: 0;
+        }
+
+        /* HERO DEMO VIDEO */
+        .hero-demo {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 146, 202, 0.2);
+            border: 1px solid #e0e0e0;
+            background: #000;
+        }
+
+        .hero-demo video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* FEATURES SECTION - EDIT FEATURES HERE */
@@ -388,8 +329,188 @@
 
         /* TESTIMONIALS - EDIT TESTIMONIALS HERE */
         .testimonials {
-            padding: 100px 0;
+            padding: 100px 0 80px;
             background: white;
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            padding: 80px 0 100px;
+            background: var(--bg-light);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .pricing-header p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* TOGGLE SWITCH */
+        .billing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .billing-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .billing-label.inactive {
+            color: var(--text-light);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 32px;
+            background: #ddd;
+            border-radius: 32px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary-color);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(28px);
+        }
+
+        .save-badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* PRICING CARD */
+        .pricing-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 146, 202, 0.15);
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 146, 202, 0.25);
+        }
+
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .price-container {
+            margin-bottom: 32px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        .pricing-cta-button {
+            display: block;
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 32px;
+        }
+
+        .pricing-cta-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            color: var(--text-dark);
+            font-size: 16px;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
         }
 
         .testimonial-grid {
@@ -473,7 +594,7 @@
         /* CTA SECTION */
         .final-cta {
             padding: 100px 0;
-            background: var(--bg-light);
+            background: white;
             text-align: center;
         }
 
@@ -526,12 +647,12 @@
                 font-size: 32px;
             }
 
-            .logo {
-                font-size: 24px;
+            .pricing-card {
+                padding: 32px 24px;
             }
 
-            .logo-jp {
-                font-size: 18px;
+            .price {
+                font-size: 42px;
             }
         }
     </style>
@@ -540,43 +661,30 @@
     <!-- NAVIGATION -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">Ashiba<span class="logo-jp">足場</span></a>
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <img alt="Ashiba 足場" width="40" height="40" class="rounded-image" src="ashiba-cyan-image.svg">
+                </div>
+                <span>Ashiba</span>
+            </a>
             <div class="nav-right">
-                <a href="#" class="nav-cta">Get Started — For Free!</a>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <a href="#pricing" class="nav-cta">Try It Free for 3 Days</a>
             </div>
         </div>
     </nav>
-
-    <!-- SIDEBAR OVERLAY -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-        <ul class="sidebar-links">
-           <li><a href="learning.html">Learning</a></li>
-           <li><a href="blog.html">Blog</a></li>
-           <li><a href="pricing.html">Pricing</a></li>
-        </ul>
-    </aside>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <!-- EDIT MAIN HEADLINE HERE -->
-            <h1>Master Japanese with <span class="highlight">Manga Flashcards</span></h1>
+            <h1>Read Japanese with Ease Using <span class="highlight">Manga Flashcards</span></h1>
             
             <!-- EDIT SUBHEADING HERE -->
-            <p class="subheading">Learn to read your favorite manga in Japanese using intelligent flashcards. Turn every panel into a powerful learning opportunity.</p>
+            <p class="subheading">Build your vocabulary through authentic panels from your favorite series. Learn like a native with stories made by native speakers for native speakers.</p>
             
             <!-- CALL TO ACTION BUTTONS -->
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">Start Reading Manga Now</a>
-                <a href="#" class="btn-secondary">See How It Works</a>
+                <a href="#" class="btn-primary">Try It Free for 3 Days</a>
             </div>
 
             <!-- SOCIAL PROOF MINI -->
@@ -589,15 +697,24 @@
                 </div>
                 <span><strong>3,500+ learners</strong> reading manga in Japanese</span>
             </div>
+
+            <!-- APP DEMO VIDEO -->
+            <div class="hero-demo">
+                <video autoplay loop muted playsinline>
+                    <source src="demo.mp4" type="video/mp4">
+                    <source src="demo.webm" type="video/webm">
+                    Your browser doesn't support video playback.
+                </video>
+            </div>
         </div>
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="section-header">
                 <h2>Everything You Need to Start Reading Manga</h2>
-                <p>Learn the vocab you need to read your favorite title through real manga panels and smart spaced repetition</p>
+                <p>Learn the vocabulary you need to read your favorite titles and master them with smart spaced repetition</p>
             </div>
 
             <!-- EDIT FEATURES HERE -->
@@ -621,9 +738,21 @@
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>No Gimmicks, Just Learning</h3>
+                    <p>No streaks, no guilt trips, no artificial rewards. Just you, great stories, and the pure joy of understanding more each day.</p>
+                </div>
+
+                <!-- <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Study Anywhere</h3>
                     <p>Practice on any device with seamless sync. Your progress follows you whether you're on phone, tablet, or desktop.</p>
+                </div> -->
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Study Anywhere</h3>
+                    <p>Practice on any device with our web app. Native apps rolling out in 2026.</p>
                 </div>
 
                 <div class="feature-card">
@@ -636,11 +765,11 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
                 <h2>Start Reading Manga in 3 Simple Steps</h2>
-                <p>From complete beginner to confident reader</p>
+                <p>From "what's that word" to confident reader</p>
             </div>
 
             <!-- EDIT STEPS HERE -->
@@ -653,7 +782,7 @@
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Review Daily</h3>
+                    <h3>Study Daily</h3>
                     <p>Make serious gains just by studying manga panel flashcards for just 15-20 minutes a day. See words in context and build vocabulary naturally.</p>
                 </div>
 
@@ -768,13 +897,61 @@
         </div>
     </section>
 
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Pricing</h2>
+                <p>Start reading manga in Japanese today with full access to all features</p>
+                
+                <!-- BILLING TOGGLE -->
+                <div class="billing-toggle">
+                    <span class="billing-label" id="monthlyLabel">Monthly</span>
+                    <div class="toggle-switch" id="toggleSwitch">
+                        <div class="toggle-slider"></div>
+                    </div>
+                    <span class="billing-label inactive" id="yearlyLabel">Yearly</span>
+                    <span class="save-badge">Save 30%</span>
+                </div>
+            </div>
+
+            <!-- PRICING CARD -->
+            <div class="pricing-card-wrapper">
+                <div class="pricing-card">
+                    <div class="plan-name">Standard Plan</div>
+                    
+                    <div class="price-container">
+                        <div>
+                            <span class="price" id="priceAmount">$15</span>
+                            <span class="price-period" id="pricePeriod">/month</span>
+                        </div>
+                        <div class="price-note" id="priceNote">Billed monthly</div>
+                    </div>
+
+                    <a href="#" class="pricing-cta-button">Try It Free for 3 Days</a>
+
+                    <ul class="features-list">
+                        <li>Unlimited manga flashcards</li>
+                        <li>Smart spaced repetition system</li>
+                        <li>Context-based vocabulary learning</li>
+                        <li>Progress tracking & analytics</li>
+                        <!-- <li>Study on all devices</li> -->
+                        <li>Access to all manga series</li>
+                        <!-- <li>Comprehensive study guides</li> -->
+                        <li>3-day free trial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
             <h2>Start Reading Manga in Japanese Today</h2>
-            <p>Join thousands of learners mastering Japanese through manga they love</p>
+            <p>Join thousands of people learning Japanese through manga they love</p>
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">Start Reading Manga Now</a>
+                <a href="#" class="btn-primary">Try It Free for 3 Days</a>
             </div>
         </div>
     </section>
@@ -786,25 +963,36 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR SIDEBAR -->
+    <!-- JAVASCRIPT FOR PRICING TOGGLE -->
     <script>
-        const hamburger = document.getElementById('hamburgerBtn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebarOverlay');
+        // Pricing toggle functionality
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const monthlyLabel = document.getElementById('monthlyLabel');
+        const yearlyLabel = document.getElementById('yearlyLabel');
+        const priceAmount = document.getElementById('priceAmount');
+        const pricePeriod = document.getElementById('pricePeriod');
+        const priceNote = document.getElementById('priceNote');
 
-        function toggleSidebar() {
-            hamburger.classList.toggle('active');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
+        let isYearly = false;
 
-        hamburger.addEventListener('click', toggleSidebar);
-        overlay.addEventListener('click', toggleSidebar);
-
-        // Close sidebar with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                toggleSidebar();
+        toggleSwitch.addEventListener('click', () => {
+            isYearly = !isYearly;
+            toggleSwitch.classList.toggle('active');
+            
+            if (isYearly) {
+                // Switch to yearly
+                monthlyLabel.classList.add('inactive');
+                yearlyLabel.classList.remove('inactive');
+                priceAmount.textContent = '$126';
+                pricePeriod.textContent = '/year';
+                priceNote.textContent = 'Billed annually ($10.5/month)';
+            } else {
+                // Switch to monthly
+                monthlyLabel.classList.remove('inactive');
+                yearlyLabel.classList.add('inactive');
+                priceAmount.textContent = '$15';
+                pricePeriod.textContent = '/month';
+                priceNote.textContent = 'Billed monthly';
             }
         });
     </script>
